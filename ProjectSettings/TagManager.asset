@@ -14,10 +14,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Fire
+  - Enemy
+  - PlayerBullet
+  - Player
   - 
   - 
   - 
