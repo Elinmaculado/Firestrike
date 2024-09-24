@@ -14,7 +14,7 @@ public class EnemyShooter : MonoBehaviour
     public Transform firePoint;
 
     private Transform player;
-    private Transform house;
+    private Transform closestHouse;
     private float nextFireTime = 0f;
 
     void Start()
@@ -24,57 +24,51 @@ public class EnemyShooter : MonoBehaviour
         {
             player = playerObject.transform;
         }
-        GameObject houseObject = GameObject.FindGameObjectWithTag("House");
-        if (houseObject != null)
-        {
-            house = houseObject.transform;
-        }
     }
 
     void Update()
     {
-        if (player != null && house != null)
+        if (player != null)
         {
-            // Calcula la distancia entre el enemigo y el jugador
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-            // Calcula la distancia entre el enemigo y la casa
-            float distanceToHouse = Vector3.Distance(transform.position, house.position);
+            FindClosestHouse();
 
-            // Determina cuál objetivo es más cercano
-            Transform target = distanceToPlayer <= distanceToHouse ? player : house;
-
-            // Si está dentro del rango de disparo, dispara
-            if (Vector3.Distance(transform.position, target.position) <= stopDistance)
+            if (closestHouse != null)
             {
-                StopMovement();
-                if (Time.time >= nextFireTime)
+                float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+                float distanceToHouse = Vector3.Distance(transform.position, closestHouse.position);
+
+                Transform target = distanceToPlayer <= distanceToHouse ? player : closestHouse;
+
+                // Si está dentro del rango de disparo, dispara
+                if (Vector3.Distance(transform.position, target.position) <= stopDistance)
                 {
-                    Shoot(target);
-                    nextFireTime = Time.time + fireRate;
+                    StopMovement();
+                    if (Time.time >= nextFireTime)
+                    {
+                        Shoot(target);
+                        nextFireTime = Time.time + fireRate;
+                    }
                 }
-            }
-            else
-            {
-                MoveTowards(target.position);
+                else
+                {
+                    MoveTowards(target.position);
+                }
             }
         }
 
-        // Si la vida del enemigo llega a 0 o menos, destruir el enemigo
         if (hp <= 0)
         {
             Destroy(gameObject);
         }
     }
 
-    // Método para mover al enemigo hacia una posición
     void MoveTowards(Vector3 targetPosition)
     {
         Vector3 direction = (targetPosition - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
     }
 
-    // Método para detener el movimiento del enemigo
     void StopMovement()
     {
         // No se necesita hacer nada aquí ya que solo dejamos de mover el enemigo
@@ -89,10 +83,9 @@ public class EnemyShooter : MonoBehaviour
         // Calcula la dirección hacia el objetivo
         Vector3 direction = (target.position - firePoint.position).normalized;
 
-        // Añade fuerza a la bala (supongamos que tiene un Rigidbody2D)
+        // Añade fuerza a la bala (suponiendo que tiene un Rigidbody2D)
         bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed; // Usa la velocidad definida
     }
-
 
     // Método que detecta colisiones
     void OnTriggerEnter2D(Collider2D collision)
@@ -102,6 +95,23 @@ public class EnemyShooter : MonoBehaviour
         {
             hp -= 1; // Resta 1 a la vida
             Destroy(collision.gameObject); // Destruir la bala después de impactar
+        }
+    }
+
+    // Método para encontrar la casa más cercana
+    void FindClosestHouse()
+    {
+        GameObject[] houses = GameObject.FindGameObjectsWithTag("House");
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject house in houses)
+        {
+            float distance = Vector3.Distance(transform.position, house.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestHouse = house.transform;
+            }
         }
     }
 }

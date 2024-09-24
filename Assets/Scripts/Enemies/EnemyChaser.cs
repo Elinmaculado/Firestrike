@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemyChaser : MonoBehaviour
 {
     // Stats
-    public float hp = 3.0f; 
-    public float speed = 5.0f; 
+    public float hp = 3.0f;
+    public float speed = 5.0f;
     public float stopDistance;
 
     private Transform player;
-    private Transform house;
+    private Transform closestHouse;
 
     void Start()
     {
@@ -20,42 +20,39 @@ public class EnemyChaser : MonoBehaviour
         {
             player = playerObject.transform;
         }
-
-        // Busca la casa por su tag
-        GameObject houseObject = GameObject.FindGameObjectWithTag("House");
-        if (houseObject != null)
-        {
-            house = houseObject.transform;
-        }
     }
 
     void Update()
     {
-        if (player != null && house != null)
+        if (player != null)
         {
-            // messures distance between player and house
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-            float distanceToHouse = Vector3.Distance(transform.position, house.position);
+            FindClosestHouse();
 
-            // Moves to the closeste one
-            if (distanceToPlayer <= distanceToHouse)
+            if (closestHouse != null)
             {
-                // it moves only if it is further away than the minimum distance
-                if (distanceToPlayer > stopDistance)
+                // messures distance between player and house
+                float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+                float distanceToHouse = Vector3.Distance(transform.position, closestHouse.position);
+
+                // Moves to the closest one
+                if (distanceToPlayer <= distanceToHouse)
                 {
-                    MoveTowards(player.position);
+                    // it moves only if it is further away than the minimum distance
+                    if (distanceToPlayer > stopDistance)
+                    {
+                        MoveTowards(player.position);
+                    }
                 }
-            }
-            else
-            {
-                if (distanceToHouse > stopDistance)
+                else
                 {
-                    MoveTowards(house.position);
+                    if (distanceToHouse > stopDistance)
+                    {
+                        MoveTowards(closestHouse.position);
+                    }
                 }
             }
         }
 
-        // If hp reaches 0 enemy dies
         if (hp <= 0)
         {
             Destroy(gameObject);
@@ -77,6 +74,23 @@ public class EnemyChaser : MonoBehaviour
 
             // Desyttoys the bullet
             Destroy(collision.gameObject);
+        }
+    }
+
+    // Find Closesest house
+    void FindClosestHouse()
+    {
+        GameObject[] houses = GameObject.FindGameObjectsWithTag("House");
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject house in houses)
+        {
+            float distance = Vector3.Distance(transform.position, house.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestHouse = house.transform;
+            }
         }
     }
 }
