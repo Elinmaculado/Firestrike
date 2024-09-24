@@ -26,7 +26,6 @@ public class EnemyChaser : MonoBehaviour
     {
         if (player != null)
         {
-            // Busca la casa más cercana
             FindClosestHouse();
 
             if (closestHouse != null)
@@ -54,7 +53,6 @@ public class EnemyChaser : MonoBehaviour
             }
         }
 
-        // If hp reaches 0 enemy dies
         if (hp <= 0)
         {
             Destroy(gameObject);

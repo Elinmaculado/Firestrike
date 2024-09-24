@@ -30,16 +30,14 @@ public class EnemyShooter : MonoBehaviour
     {
         if (player != null)
         {
-            // Busca la casa más cercana
+
             FindClosestHouse();
 
-            // Si encuentra una casa, calcula distancias
             if (closestHouse != null)
             {
                 float distanceToPlayer = Vector3.Distance(transform.position, player.position);
                 float distanceToHouse = Vector3.Distance(transform.position, closestHouse.position);
 
-                // Determina cuál objetivo es más cercano
                 Transform target = distanceToPlayer <= distanceToHouse ? player : closestHouse;
 
                 // Si está dentro del rango de disparo, dispara
@@ -59,21 +57,18 @@ public class EnemyShooter : MonoBehaviour
             }
         }
 
-        // Si la vida del enemigo llega a 0 o menos, destruir el enemigo
         if (hp <= 0)
         {
             Destroy(gameObject);
         }
     }
 
-    // Método para mover al enemigo hacia una posición
     void MoveTowards(Vector3 targetPosition)
     {
         Vector3 direction = (targetPosition - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
     }
 
-    // Método para detener el movimiento del enemigo
     void StopMovement()
     {
         // No se necesita hacer nada aquí ya que solo dejamos de mover el enemigo
