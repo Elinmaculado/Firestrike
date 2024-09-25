@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 1310002093355300694}
   - component: {fileID: 4649031696797316156}
   - component: {fileID: 2949806239391904929}
+  - component: {fileID: 4467018337794032042}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -528,6 +529,7 @@ MonoBehaviour:
   playerTag: Player
   invulnerabilityTime: 0.5
   playerSprite: {fileID: 8786294495249716214}
+  life: {fileID: 4467018337794032042}
 --- !u!50 &4649031696797316156
 Rigidbody2D:
   serializedVersion: 4
@@ -590,6 +592,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &4467018337794032042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242218430906967830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00033a12234411409f709b436019d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
 --- !u!1 &4566396952374348620
 GameObject:
   m_ObjectHideFlags: 0
