@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BuildingIdleState : BuildingState
 {
-    public BuildingIdleState(StateMachine _stateMachine, BuildingController stats) : base(_stateMachine, stats)
+    public BuildingIdleState(StateMachine _stateMachine, BuildingController controller) : base(_stateMachine, controller)
     {
     }
 
@@ -30,9 +30,10 @@ public class BuildingIdleState : BuildingState
         {
             controller.fireTimer -= Time.deltaTime;
         }
-        if (controller.fireTimer > controller.fireTime)
+        if (controller.fireTimer >= controller.fireTime)
         {
             stateMachine.ChangeState(controller.burningState);
         }
+        controller.burningSprite.transform.localScale = Vector3.one *  controller.fireTimer;
     }
 }

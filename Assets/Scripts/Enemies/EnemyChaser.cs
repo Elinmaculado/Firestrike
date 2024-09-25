@@ -14,6 +14,7 @@ public class EnemyChaser : MonoBehaviour
 
     public float attackCooldown;
     public float damage;
+    public float fireDamage;
 
     bool isReadyToDamage = true;
 
@@ -84,12 +85,18 @@ public class EnemyChaser : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+    
+        if (isReadyToDamage)
         {
-            if (isReadyToDamage)
+            if (collision.gameObject.CompareTag("Player"))
             {
-                collision.gameObject.GetComponent<Damagable>().Damage(damage);
                 StartCoroutine(DealDamge());
+                collision.gameObject.GetComponent<Damagable>().Damage(damage);
+            }
+            if (collision.gameObject.CompareTag("House"))
+            {
+                StartCoroutine(DealDamge());
+                collision.gameObject.GetComponent<BuildingController>().OnFire(damage);
             }
         }
     }

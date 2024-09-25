@@ -17,6 +17,7 @@ public class BuildingBurningState : BuildingState
         controller.isOnFire = true;
         controller.currentFireDamage = controller.maxFireDamage;
         controller.gameObject.tag = "BurningHouse";
+        controller.burningSprite.transform.localScale = Vector3.one* controller.currentFireDamage;
     }
 
     public override void ExitState()
@@ -33,7 +34,8 @@ public class BuildingBurningState : BuildingState
             stateMachine.ChangeState(controller.idleState);
         }
         controller.currentHealthPoints -= controller.currentFireDamage * Time.deltaTime;
-        if(controller.currentHealthPoints < 0)
+        controller.burningSprite.transform.localScale = Vector3.one * controller.currentFireDamage;
+        if (controller.currentHealthPoints < 0)
         {
             Debug.Log("Building burnt");
             controller.gameObject.SetActive(false);

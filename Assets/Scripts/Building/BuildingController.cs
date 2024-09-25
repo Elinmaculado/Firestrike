@@ -15,6 +15,7 @@ public class BuildingController : MonoBehaviour
     StateMachine stateMachine;
     public BuildingIdleState idleState;
     public BuildingBurningState burningState;
+    public GameObject burningSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +43,7 @@ public class BuildingController : MonoBehaviour
     // Function must be called by projectiles or enemies that set the building on fire
     public void OnFire(float fireDamage)
     {
-        fireTimer += fireDamage * Time.deltaTime;
+        fireTimer += fireDamage;
     }
 
 
