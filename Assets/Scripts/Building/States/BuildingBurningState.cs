@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class BuildingBurningState : BuildingState
 {
 
 
-    public BuildingBurningState(StateMachine _stateMachine, BuildingController stats) : base(_stateMachine, stats)
+    public BuildingBurningState(StateMachine _stateMachine, BuildingController controller) : base(_stateMachine, controller)
     {
     }
 
@@ -15,11 +16,13 @@ public class BuildingBurningState : BuildingState
         base.EnterState();
         controller.isOnFire = true;
         controller.currentFireDamage = controller.maxFireDamage;
+        controller.gameObject.tag = "BurningHouse";
     }
 
     public override void ExitState()
     {
         base.ExitState();
+        controller.gameObject.tag = "House";
     }
 
     public override void Update()

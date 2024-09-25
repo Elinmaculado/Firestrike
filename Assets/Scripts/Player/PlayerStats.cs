@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStats : MonoBehaviour, IEDamagable
+public class PlayerStats : MonoBehaviour
 {
 
     [SerializeField] int maxHelath;
@@ -13,46 +13,30 @@ public class PlayerStats : MonoBehaviour, IEDamagable
     [SerializeField] float invulnerabilityTime;
     [SerializeField] SpriteRenderer playerSprite;
     Color damagedColor;
-    float currentHealt;
-
-    public void Damage(float damage)
-    {
-        if(gameObject.CompareTag(iframeTag)) { return; }
-        StartCoroutine(IFrames());
-        currentHealt -= damage;
-        UpdateLifeBar();
-        if(currentHealt<=0){
-            Die();
-        }
-    }
-
-    public void Die()
-    {
-        Destroy(gameObject);
-    }
+    public Damagable life;
 
 
     private void Start() {
-        currentHealt = maxHelath;
+        life.currentHealth = maxHelath;
         gameObject.tag = playerTag;
     }
 
     private void Update() {
-        if(currentHealt<maxHelath){
-            currentHealt += Time.deltaTime;
+        if(life.currentHealth <maxHelath){
+            life.currentHealth += Time.deltaTime;
         }
-        if(currentHealt>maxHelath){
-            currentHealt = maxHelath;
+        if(life.currentHealth >maxHelath){
+            life.currentHealth = maxHelath;
         }
         UpdateLifeBar();
         if(Input.GetKeyDown(KeyCode.Q)){
-            Damage(10);
+            life.Damage(10);
         }
 
     }
 
     void UpdateLifeBar(){
-        fillBar.fillAmount = currentHealt/maxHelath;
+        fillBar.fillAmount = life.currentHealth /maxHelath;
     }
 
     IEnumerator IFrames()

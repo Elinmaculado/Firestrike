@@ -7,6 +7,8 @@ TagManager:
   - Bullet
   - House
   - IF_Player
+  - Enemy
+  - BurningHouse
   layers:
   - Default
   - TransparentFX

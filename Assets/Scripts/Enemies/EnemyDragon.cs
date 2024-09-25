@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDragon : MonoBehaviour
 {
     // Stats
-    public float hp = 5.0f;
+    public Damagable life;
     public float speed = 3.0f;
     public float stopDistance = 4.0f;
 
@@ -68,12 +68,6 @@ public class EnemyDragon : MonoBehaviour
                     MoveTowards(target.position);
                 }
             }
-        }
-
-        // Si la vida del dragón llega a 0 o menos, destruir el dragón
-        if (hp <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 
@@ -139,17 +133,6 @@ public class EnemyDragon : MonoBehaviour
                 closestDistance = distance;
                 closestHouse = house.transform;
             }
-        }
-    }
-
-    // Método que detecta colisiones
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Si colisiona con un objeto que tiene el tag "Bullet"
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            hp -= 1; // Resta 1 a la vida
-            Destroy(collision.gameObject); // Destruir la bala después de impactar
         }
     }
 }
