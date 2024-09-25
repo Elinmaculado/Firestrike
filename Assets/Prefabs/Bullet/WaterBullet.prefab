@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7686627432637924975}
   - component: {fileID: 3173942031090281407}
   - component: {fileID: 1000875313239139942}
-  - component: {fileID: -5013141121986217789}
+  - component: {fileID: 3386134310276765564}
   m_Layer: 11
   m_Name: WaterBullet
   m_TagString: Untagged
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5013141121986217789
+--- !u!114 &3386134310276765564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,9 +158,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1971731651208080490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bb7a65c2a956304f9bb702a95b65fde, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d07a674d7c177e4d9690bd7f6fc46e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTimeSeconds: 1
-  targetTag: BurningHouse
-  damage: 50
+  lifeTimeSeconds: 5
+  target: BurningHouse
+  damage: 1

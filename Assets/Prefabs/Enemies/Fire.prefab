@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8846360757994543486}
   - component: {fileID: 3925974149134321306}
   - component: {fileID: -6189169719499078508}
+  - component: {fileID: 7980400050767370801}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8980087305683980570}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.77, y: 9.93, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.4761, y: 2.4761, z: 2.4761}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -146,3 +147,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7980400050767370801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8980087305683980570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f839c5cbc16aa244586c8df734501f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: House
+  damage: 3
