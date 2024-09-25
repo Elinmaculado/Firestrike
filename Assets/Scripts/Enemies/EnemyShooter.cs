@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShooter : MonoBehaviour
+public class EnemyShooter : MonoBehaviour, IEDamagable
 {
     // Stats
     public float hp = 3.0f;
@@ -91,11 +91,13 @@ public class EnemyShooter : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Si colisiona con un objeto que tiene el tag "Bullet"
+        /*
         if (collision.gameObject.CompareTag("Bullet"))
         {
             hp -= 1; // Resta 1 a la vida
             Destroy(collision.gameObject); // Destruir la bala después de impactar
         }
+        */
     }
 
     // Método para encontrar la casa más cercana
@@ -113,5 +115,15 @@ public class EnemyShooter : MonoBehaviour
                 closestHouse = house.transform;
             }
         }
+    }
+
+    public void Damage(float damage)
+    {
+        hp -= damage;
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }
