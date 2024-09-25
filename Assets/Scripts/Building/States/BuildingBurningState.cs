@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class BuildingBurningState : BuildingState
 {
 
 
-    public BuildingBurningState(StateMachine _stateMachine, BuildingController stats) : base(_stateMachine, stats)
+    public BuildingBurningState(StateMachine _stateMachine, BuildingController controller) : base(_stateMachine, controller)
     {
     }
 
@@ -15,11 +16,14 @@ public class BuildingBurningState : BuildingState
         base.EnterState();
         controller.isOnFire = true;
         controller.currentFireDamage = controller.maxFireDamage;
+        controller.gameObject.tag = "BurningHouse";
+        controller.burningSprite.transform.localScale = Vector3.one* controller.currentFireDamage;
     }
 
     public override void ExitState()
     {
         base.ExitState();
+        controller.gameObject.tag = "House";
     }
 
     public override void Update()
@@ -30,7 +34,8 @@ public class BuildingBurningState : BuildingState
             stateMachine.ChangeState(controller.idleState);
         }
         controller.currentHealthPoints -= controller.currentFireDamage * Time.deltaTime;
-        if(controller.currentHealthPoints < 0)
+        controller.burningSprite.transform.localScale = Vector3.one * controller.currentFireDamage;
+        if (controller.currentHealthPoints < 0)
         {
             Debug.Log("Building burnt");
             controller.gameObject.SetActive(false);

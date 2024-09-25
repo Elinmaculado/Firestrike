@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyChaser : MonoBehaviour
 {
     // Stats
-    public float hp = 3.0f;
+    public Damagable life;
     public float speed = 5.0f;
     public float stopDistance;
 
     private Transform player;
     private Transform closestHouse;
+
+    public float attackCooldown;
+    public float damage;
+    public float fireDamage;
+
+    bool isReadyToDamage = true;
 
     void Start()
     {
@@ -52,29 +59,12 @@ public class EnemyChaser : MonoBehaviour
                 }
             }
         }
-
-        if (hp <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 
     void MoveTowards(Vector3 targetPosition)
     {
         Vector3 direction = (targetPosition - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        // If hit by a bullet it loses hp
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            hp -= 1;
-
-            // Desyttoys the bullet
-            Destroy(collision.gameObject);
-        }
     }
 
     // Find Closesest house
@@ -92,5 +82,32 @@ public class EnemyChaser : MonoBehaviour
                 closestHouse = house.transform;
             }
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+
+        Debug.Log("Chasing");
+           if (collision.gameObject.CompareTag("House"))
+        {
+            Debug.Log("chaser burns");
+            collision.gameObject.GetComponent<BuildingController>().OnFire(fireDamage * Time.deltaTime);
+        }
+        if (isReadyToDamage)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                StartCoroutine(DealDamge());
+                collision.gameObject.GetComponent<Damagable>().Damage(damage);
+            }
+        }
+     
+    }
+
+    IEnumerator DealDamge()
+    {
+        isReadyToDamage = false;
+        yield return new WaitForSeconds(attackCooldown);
+        isReadyToDamage = true;
     }
 }

@@ -3,47 +3,52 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStats : MonoBehaviour, IEDamagable
+public class PlayerStats : MonoBehaviour
 {
 
     [SerializeField] int maxHelath;
     [SerializeField] Image fillBar;
-    float currentHealt;
-
-    public void Damage(float damage)
-    {
-        currentHealt -= damage;
-        UpdateLifeBar();
-        if(currentHealt<=0){
-            Die();
-        }
-    }
-
-    public void Die()
-    {
-        Destroy(gameObject);
-    }
+    [SerializeField] string iframeTag;
+    [SerializeField] string playerTag;
+    [SerializeField] float invulnerabilityTime;
+    [SerializeField] SpriteRenderer playerSprite;
+    Color damagedColor;
+    public Damagable life;
 
 
     private void Start() {
-        currentHealt = maxHelath;
+        life.currentHealth = maxHelath;
+        gameObject.tag = playerTag;
     }
 
     private void Update() {
-        if(currentHealt<maxHelath){
-            currentHealt += Time.deltaTime;
+        if(life.currentHealth <maxHelath){
+            life.currentHealth += Time.deltaTime;
         }
-        if(currentHealt>maxHelath){
-            currentHealt = maxHelath;
+        if(life.currentHealth >maxHelath){
+            life.currentHealth = maxHelath;
         }
         UpdateLifeBar();
         if(Input.GetKeyDown(KeyCode.Q)){
-            Damage(10);
+            life.Damage(10);
         }
 
     }
 
     void UpdateLifeBar(){
-        fillBar.fillAmount = currentHealt/maxHelath;
+        fillBar.fillAmount = life.currentHealth /maxHelath;
+    }
+
+    IEnumerator IFrames()
+    {
+        float alpha = playerSprite.color.a;
+        damagedColor = playerSprite.color;
+        damagedColor.a = 0.5f;
+        playerSprite.color = damagedColor; 
+        gameObject.tag = iframeTag;
+        yield return new WaitForSeconds(invulnerabilityTime);
+        gameObject.tag = playerTag;
+        damagedColor.a = alpha;
+        playerSprite.color = damagedColor;
     }
 }

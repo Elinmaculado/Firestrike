@@ -1,19 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] LayerMask collitionLayers;
     [SerializeField] float lifeTimeSeconds;
+    [SerializeField] string targetTag;
+    [SerializeField] float damage;
 
     private void Start()
     {
         Destroy(gameObject,lifeTimeSeconds);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag(targetTag))
+        {
+            collision.gameObject.GetComponent<Damagable>().Damage(damage);
+            Destroy(gameObject);
+        }
     }
 }

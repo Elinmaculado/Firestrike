@@ -397,9 +397,10 @@ GameObject:
   - component: {fileID: 1310002093355300694}
   - component: {fileID: 4649031696797316156}
   - component: {fileID: 2949806239391904929}
+  - component: {fileID: 4467018337794032042}
   m_Layer: 12
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -417,9 +418,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4370006946205815404}
   - {fileID: 3229339762728765472}
   - {fileID: 5664588736954660298}
-  - {fileID: 4370006946205815404}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8786294495249716214
@@ -524,6 +525,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHelath: 100
   fillBar: {fileID: 2000881458431052720}
+  iframeTag: IF_Player
+  playerTag: Player
+  invulnerabilityTime: 0.5
+  playerSprite: {fileID: 8786294495249716214}
+  life: {fileID: 0}
 --- !u!50 &4649031696797316156
 Rigidbody2D:
   serializedVersion: 4
@@ -586,6 +592,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &4467018337794032042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242218430906967830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00033a12234411409f709b436019d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
 --- !u!1 &4566396952374348620
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.0734694, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.23537777, b: 0.11792451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

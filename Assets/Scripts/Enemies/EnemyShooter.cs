@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShooter : MonoBehaviour, IEDamagable
+public class EnemyShooter : MonoBehaviour
 {
     // Stats
-    public float hp = 3.0f;
+    public Damagable life;
     public float speed = 5.0f;
     public float stopDistance = 3.0f;
     public GameObject bulletPrefab;
@@ -55,11 +55,6 @@ public class EnemyShooter : MonoBehaviour, IEDamagable
                     MoveTowards(target.position);
                 }
             }
-        }
-
-        if (hp <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 
@@ -115,15 +110,5 @@ public class EnemyShooter : MonoBehaviour, IEDamagable
                 closestHouse = house.transform;
             }
         }
-    }
-
-    public void Damage(float damage)
-    {
-        hp -= damage;
-    }
-
-    public void Die()
-    {
-        Destroy(gameObject);
     }
 }
