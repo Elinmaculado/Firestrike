@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7161248286749054149}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: 3732503141010190897}
   - component: {fileID: 5714706927578604440}
   - component: {fileID: 7659661813166326292}
-  m_Layer: 0
+  - component: {fileID: 6959388074684421579}
+  m_Layer: 10
   m_Name: Shooter
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c7ce2914b8f9f14a9ad803745887521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  life: {fileID: 6959388074684421579}
   speed: 2
   stopDistance: 3
   bulletPrefab: {fileID: 841509040464400547, guid: 7f76638acf95d604ab271ba758ae6068, type: 3}
@@ -200,3 +201,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6959388074684421579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902453391379595705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00033a12234411409f709b436019d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100

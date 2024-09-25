@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4626966591262154405}
   - component: {fileID: 7992854239303417095}
   - component: {fileID: 5903945054544547013}
-  m_Layer: 0
+  - component: {fileID: 6060672483755488353}
+  m_Layer: 10
   m_Name: Dragon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a84239de49bf554a92e3a0ac1340713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  life: {fileID: 6060672483755488353}
   speed: 3
   stopDistance: 4
   fireAreaPrefab: {fileID: 8980087305683980570, guid: 70ace4ed54626624eb2ef1ce1de3d319, type: 3}
@@ -179,3 +180,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6060672483755488353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8687419302606156155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00033a12234411409f709b436019d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100

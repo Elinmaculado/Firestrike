@@ -161,7 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb7a65c2a956304f9bb702a95b65fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collitionLayers:
-    serializedVersion: 2
-    m_Bits: 1024
   lifeTimeSeconds: 1
+  targetTag: Enemy
+  damage: 50
