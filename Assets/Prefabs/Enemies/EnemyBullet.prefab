@@ -177,5 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f839c5cbc16aa244586c8df734501f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeTime: 5
   target: House
-  damage: 2
+  damage: 3

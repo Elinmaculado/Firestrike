@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyChaser : MonoBehaviour
@@ -85,7 +86,13 @@ public class EnemyChaser : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-    
+
+        Debug.Log("Chasing");
+           if (collision.gameObject.CompareTag("House"))
+        {
+            Debug.Log("chaser burns");
+            collision.gameObject.GetComponent<BuildingController>().OnFire(fireDamage * Time.deltaTime);
+        }
         if (isReadyToDamage)
         {
             if (collision.gameObject.CompareTag("Player"))
@@ -93,12 +100,8 @@ public class EnemyChaser : MonoBehaviour
                 StartCoroutine(DealDamge());
                 collision.gameObject.GetComponent<Damagable>().Damage(damage);
             }
-            if (collision.gameObject.CompareTag("House"))
-            {
-                StartCoroutine(DealDamge());
-                collision.gameObject.GetComponent<BuildingController>().OnFire(damage);
-            }
         }
+     
     }
 
     IEnumerator DealDamge()
