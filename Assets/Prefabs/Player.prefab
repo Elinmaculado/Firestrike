@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 2949806239391904929}
   m_Layer: 12
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -524,6 +524,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHelath: 100
   fillBar: {fileID: 2000881458431052720}
+  iframeTag: IF_Player
+  playerTag: Player
+  invulnerabilityTime: 0.5
+  playerSprite: {fileID: 8786294495249716214}
 --- !u!50 &4649031696797316156
 Rigidbody2D:
   serializedVersion: 4
