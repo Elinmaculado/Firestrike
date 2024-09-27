@@ -135,9 +135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: {fileID: 6959388074684421579}
   speed: 2
-  stopDistance: 3
+  stopDistance: 6
   bulletPrefab: {fileID: 841509040464400547, guid: 7f76638acf95d604ab271ba758ae6068, type: 3}
-  fireRate: 1
+  fireRate: 1.75
   bulletSpeed: 10
   firePoint: {fileID: 85159629806584807}
 --- !u!70 &5714706927578604440
