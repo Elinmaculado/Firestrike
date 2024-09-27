@@ -54300,7 +54300,7 @@ PrefabInstance:
       objectReference: {fileID: 1444581539}
     - target: {fileID: 3687781720427094578, guid: 210d3081a9e572b4d92772892f0abb40, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 7935
+      value: 24319
       objectReference: {fileID: 0}
     - target: {fileID: 4331475761266129088, guid: 210d3081a9e572b4d92772892f0abb40, type: 3}
       propertyPath: m_Name
@@ -56516,7 +56516,7 @@ GameObject:
   - component: {fileID: 1209807122}
   - component: {fileID: 1209807124}
   - component: {fileID: 1209807123}
-  m_Layer: 7
+  m_Layer: 14
   m_Name: Town
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69076,7 +69076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1701921765
 MonoBehaviour:
   m_ObjectHideFlags: 0
