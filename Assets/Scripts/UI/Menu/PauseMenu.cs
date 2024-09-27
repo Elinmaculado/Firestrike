@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
+    public GameObject settingsPanel;
     private bool isPaused = false;
     // Start is called before the first frame update
     void Start()
@@ -16,9 +17,17 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            
             if (isPaused)
             {
+                if (settingsPanel.activeInHierarchy)
+                {
+                    return;
+                }
+                else
+                {
                 Continue(); // Reanudar el juego
+                }
             }
             else
             {
