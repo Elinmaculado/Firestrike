@@ -4,6 +4,7 @@ public class Damagable : MonoBehaviour
 {
 
     public float currentHealth;
+    public float scoreValue;
 
     public void Damage(float damage)
     {
@@ -16,6 +17,7 @@ public class Damagable : MonoBehaviour
 
     public void Die()
     {
+        GameManager.instance.AddScore(scoreValue);
         Destroy(gameObject);
     }
 }

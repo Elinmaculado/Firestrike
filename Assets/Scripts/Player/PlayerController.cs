@@ -14,12 +14,17 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown;
     bool isDashig = false;
     bool isReadyToDash = true;
+    public SpriteRenderer sprite;
+
+    public Animator animator;
     private void Update()
     {
 
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
-
+        animator.SetInteger("Horizontal", (int)horizontalMovement);
+        animator.SetInteger("Vertical", (int)verticalMovement);
+        sprite.flipX = horizontalMovement < 0;
 
         movement = new Vector3(horizontalMovement, verticalMovement, 0);
 
