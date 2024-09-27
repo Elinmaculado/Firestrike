@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
+  scoreValue: 150
 --- !u!1 &5927879411175613142
 GameObject:
   m_ObjectHideFlags: 0

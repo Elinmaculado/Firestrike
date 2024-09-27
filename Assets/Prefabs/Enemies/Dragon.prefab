@@ -192,7 +192,7 @@ MonoBehaviour:
   fireRate: 2
   fireAreaSize: {x: 3, y: 3}
   fireActiveTime: 3
-  fireInactiveTime: 1
+  fireInactiveTime: 0.8
 --- !u!50 &7992854239303417095
 Rigidbody2D:
   serializedVersion: 4
@@ -278,3 +278,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
+  scoreValue: 200

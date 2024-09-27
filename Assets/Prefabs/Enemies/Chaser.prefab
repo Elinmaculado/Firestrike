@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
+  scoreValue: 100
 --- !u!70 &8746231552027039954
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
