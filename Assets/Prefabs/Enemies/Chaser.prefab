@@ -105,7 +105,7 @@ MonoBehaviour:
   speed: 7.8
   stopDistance: 2.5
   attackCooldown: 1
-  damage: 0.5
+  damage: 5
   fireDamage: 2
 --- !u!50 &781439120443443100
 Rigidbody2D:
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
+  scoreValue: 100
 --- !u!70 &8746231552027039954
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
