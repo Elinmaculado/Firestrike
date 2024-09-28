@@ -27,6 +27,8 @@ public class BuildingController : MonoBehaviour
         stateMachine.Initialize(idleState);
 
         currentHealthPoints = maxHealthPoints;
+
+        GameManager.instance.AddHouse();
     }
 
     // Update is called once per frame
