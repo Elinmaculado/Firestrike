@@ -8,15 +8,20 @@ public class GameManager : MonoBehaviour
 
     float score = 0;
 
-    [SerializeField] GameObject gameOverScreen;
+    long finalScore;
+
+    [SerializeField] HighScoreTable gameOverScreen;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject playerCamera;
+    [SerializeField] GameObject playerMinimapCamera;
 
 
-    private void Start()
+    private void Awake()
     {
         if(instance == null)
         {
             instance = this;
+
         }
         else
         {
@@ -46,13 +51,21 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        finalScore = (long)score;
+        Destroy(playerCamera);
+        Destroy(playerMinimapCamera);   
         Destroy(player);
-        gameOverScreen.SetActive(true); 
+        gameOverScreen.GameOver(finalScore);
     }
 
     public void AddScore(float _score)
     {
         score += score;
+    }
+
+    public void HighScoreEntry(string name)
+    {
+        gameOverScreen.AddHighScoreEntry(finalScore, name);
     }
 
 }

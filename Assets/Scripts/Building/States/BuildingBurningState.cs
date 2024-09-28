@@ -38,6 +38,7 @@ public class BuildingBurningState : BuildingState
         if (controller.currentHealthPoints < 0)
         {
             Debug.Log("Building burnt");
+            GameManager.instance.BurnHouse();
             controller.gameObject.SetActive(false);
         }
     }
