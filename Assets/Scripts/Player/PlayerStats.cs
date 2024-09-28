@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float invulnerabilityTime;
     [SerializeField] SpriteRenderer playerSprite;
     Color damagedColor;
-    public Damagable life;
+    public PlayerDamagable life;
 
 
     private void Start() {
@@ -29,10 +29,7 @@ public class PlayerStats : MonoBehaviour
             life.currentHealth = maxHelath;
         }
         UpdateLifeBar();
-        if(Input.GetKeyDown(KeyCode.Q)){
-            life.Damage(10);
-        }
-
+        if (Input.GetKeyUp(KeyCode.Q)) { life.Die(); }
     }
 
     void UpdateLifeBar(){
