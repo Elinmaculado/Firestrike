@@ -7,7 +7,6 @@ public class PlayerDamagable : Damagable
 
     public new void Die()
     {
-        base.Die();
         GameManager.instance.GameOver();
     }
 }
