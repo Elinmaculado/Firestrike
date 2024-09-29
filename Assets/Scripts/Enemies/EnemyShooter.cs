@@ -17,6 +17,11 @@ public class EnemyShooter : MonoBehaviour
     private Transform closestHouse;
     private float nextFireTime = 0f;
 
+
+
+    [SerializeField] Animator animator;
+    [SerializeField] SpriteRenderer sprite;
+
     void Start()
     {
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -62,6 +67,8 @@ public class EnemyShooter : MonoBehaviour
     {
         Vector3 direction = (targetPosition - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
+        animator.SetInteger("Vertical", (int)(direction.y*2));
+        sprite.flipX = direction.x < 0;
     }
 
     void StopMovement()

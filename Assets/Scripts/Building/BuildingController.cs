@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingController : MonoBehaviour
 {
@@ -17,11 +18,13 @@ public class BuildingController : MonoBehaviour
     public BuildingBurningState burningState;
     public GameObject burningSprite;
 
+    public Image lifeBar;
+
     // Start is called before the first frame update
     void Start()
     {
         stateMachine = new StateMachine();
-        idleState = new BuildingIdleState(stateMachine,this);
+        idleState = new BuildingIdleState(stateMachine, this);
         burningState = new BuildingBurningState(stateMachine, this);
 
         stateMachine.Initialize(idleState);
@@ -50,8 +53,13 @@ public class BuildingController : MonoBehaviour
 
 
     // Function must be called by projectiles that put out fire
-    public void PutOutFire(float waterDamage) 
+    public void PutOutFire(float waterDamage)
     {
         currentFireDamage -= waterDamage;
+    }
+
+    public void UpdatgeLifeBar()
+    {
+        lifeBar.fillAmount = currentHealthPoints / maxHealthPoints;
     }
 }

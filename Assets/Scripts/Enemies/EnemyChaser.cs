@@ -19,6 +19,10 @@ public class EnemyChaser : MonoBehaviour
 
     bool isReadyToDamage = true;
 
+
+    [SerializeField] Animator animator;
+    [SerializeField] SpriteRenderer sprite;
+
     void Start()
     {
         // Busca el jugador por su tag
@@ -65,6 +69,8 @@ public class EnemyChaser : MonoBehaviour
     {
         Vector3 direction = (targetPosition - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
+        animator.SetInteger("Vertical", (int)(direction.y * 2));
+        sprite.flipX = direction.x < 0;
     }
 
     // Find Closesest house

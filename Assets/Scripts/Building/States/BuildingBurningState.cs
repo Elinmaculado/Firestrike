@@ -35,6 +35,7 @@ public class BuildingBurningState : BuildingState
         }
         controller.currentHealthPoints -= controller.currentFireDamage * Time.deltaTime;
         controller.burningSprite.transform.localScale = Vector3.one * controller.currentFireDamage;
+        controller.UpdatgeLifeBar();
         if (controller.currentHealthPoints < 0)
         {
             Debug.Log("Building burnt");
