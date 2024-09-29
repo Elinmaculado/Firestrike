@@ -24,7 +24,7 @@ TagManager:
   - PlayerBullet
   - Player
   - Minimap
-  - 
+  - Buildings
   - 
   - 
   - 
@@ -43,9 +43,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Houses
-    uniqueID: 1682190689
-    locked: 0
   - name: Ground
     uniqueID: 460148849
     locked: 0
@@ -57,6 +54,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1043531909
+    locked: 0
+  - name: Houses
+    uniqueID: 1682190689
     locked: 0
   - name: Enemy
     uniqueID: 3043978117
