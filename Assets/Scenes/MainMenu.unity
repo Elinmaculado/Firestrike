@@ -1726,6 +1726,8 @@ GameObject:
   - component: {fileID: 1133297472}
   - component: {fileID: 1133297471}
   - component: {fileID: 1133297470}
+  - component: {fileID: 1133297475}
+  - component: {fileID: 1133297474}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -2743,6 +2745,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661741016}
   m_CullTransparentMesh: 1
+--- !u!114 &1747766965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5300266963365685998, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+  m_PrefabInstance: {fileID: 1724345108522147174}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1757282149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4108,7 +4121,9 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3540130555671993469, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+    - {fileID: 5719997958388221876, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
