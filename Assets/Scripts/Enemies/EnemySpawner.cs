@@ -8,7 +8,10 @@ public class EnemySpawner : MonoBehaviour
     public Transform[] spawnPoints;
 
     public float minSpawnTime = 3f; 
-    public float maxSpawnTime = 6f; 
+    public float maxSpawnTime = 6f;
+
+    public AudioClip spawnSound;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -31,6 +34,8 @@ public class EnemySpawner : MonoBehaviour
 
             // Instanciar el enemigo en el punto de spawn
             Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
+            audioSource.pitch = Random.Range(1.0f, 2.0f);
+            audioSource.PlayOneShot(spawnSound);
         }
     }
 
