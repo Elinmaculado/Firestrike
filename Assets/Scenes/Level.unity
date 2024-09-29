@@ -1252,8 +1252,7 @@ Transform:
   m_LocalPosition: {x: -23.5, y: -28.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2012021150}
+  m_Children: []
   m_Father: {fileID: 547952681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &151198275
@@ -112926,7 +112925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1701921765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116383,6 +116382,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 843cc0f6d43d0ba4093ca5168d930d8f, type: 3}
+    - target: {fileID: 5300266963365685998, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_Value
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300266963365685998, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920013683792856202, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_Value
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920013683792856202, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 7082049859020422745, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -116390,6 +116405,14 @@ PrefabInstance:
     - target: {fileID: 7815500297637432980, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037372200049410177, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_Value
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037372200049410177, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
