@@ -116333,6 +116333,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 451554924080651961, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: bd287fce997e31343a4f1c27fb91781b, type: 2}
+    - target: {fileID: 451554924080651961, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 574037791612309407, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -116537,6 +116545,14 @@ PrefabInstance:
       propertyPath: m_MinValue
       value: 0.0001
       objectReference: {fileID: 0}
+    - target: {fileID: 7018515219116974230, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: bd287fce997e31343a4f1c27fb91781b, type: 2}
+    - target: {fileID: 7018515219116974230, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7082049859020422745, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -116553,7 +116569,14 @@ PrefabInstance:
       propertyPath: m_MinValue
       value: 0.0001
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8448234772360978534, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: bd287fce997e31343a4f1c27fb91781b, type: 2}
+    - target: {fileID: 8448234772360978534, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3540130555671993469, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}
     - {fileID: 5719997958388221876, guid: 60ef19158376c1f47b8972a4b3fb6c80, type: 3}

@@ -21,12 +21,14 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            Debug.Log("More than one audio manager");
         }
         LoadVolume();
     }
 
     void LoadVolume()
     {
+        Debug.Log(PlayerPrefs.GetFloat(MUSIC_KEY));
         float musicVolume = PlayerPrefs.GetFloat(MUSIC_KEY, 1.0f);
         float sfxVolume = PlayerPrefs.GetFloat(SFX_KEY, 1.0f);
         float masterVolume = PlayerPrefs.GetFloat(MASTER_KEY, 1.0f);
