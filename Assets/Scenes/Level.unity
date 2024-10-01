@@ -4299,7 +4299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faab9faebb1ea304eb502eded2c254c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverScreen: {fileID: 0}
+  gameOverScreen: {fileID: 1675435400}
   player: {fileID: 1444581539}
   playerCamera: {fileID: 516236477}
   playerMinimapCamera: {fileID: 964047674}
@@ -70202,7 +70202,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 8320
+    m_Bits: 24704
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 00f5bed0fd7d89d4093aa4e1b780adb5, type: 2}
   m_TargetDisplay: 0
@@ -110304,10 +110304,6 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 801628231}
-    - target: {fileID: 2875990457447954024, guid: a44bd8897d4f31a4cb73c0565eb81b4d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4242218430906967830, guid: a44bd8897d4f31a4cb73c0565eb81b4d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -111230,21 +111226,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 471429821}
     - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1675435400}
     - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1744520379}
     - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2003655247}
     - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HighScoreEntry
@@ -111274,6 +111278,10 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
@@ -111283,6 +111291,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8155806947875197624, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
@@ -111320,11 +111332,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7374502977571665115, guid: 0dd804f33137dad44abac58fe81bf0bb, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b0653a567fa49634b8ba74b12e4e4d73, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d522dbbb2b4c9ee46ac618a73a8e9eb3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -112929,6 +112941,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.78125, y: 0.50841427}
   m_EdgeRadius: 0
+--- !u!114 &1675435400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3928953373198199257, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
+  m_PrefabInstance: {fileID: 1420837902}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff664415e424f54aab136d0ce0e6c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1698691114
 GameObject:
   m_ObjectHideFlags: 0
@@ -113398,6 +113421,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.90625, y: 0.5907078}
   m_EdgeRadius: 0
+--- !u!1 &1744520379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9087416671512506775, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
+  m_PrefabInstance: {fileID: 1420837902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1760816514
 GameObject:
   m_ObjectHideFlags: 0
@@ -114920,6 +114948,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349797234de2646438d800c83c4d2ced, type: 3}
+--- !u!1 &2003655247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2239920183013620902, guid: a1f71e6f38b92214f9a959697c5d9895, type: 3}
+  m_PrefabInstance: {fileID: 1420837902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2008696703
 GameObject:
   m_ObjectHideFlags: 0

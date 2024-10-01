@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer sprite;
 
     public Animator animator;
+    [SerializeField]GameObject tpParticles;
+    [SerializeField] SpriteRenderer playerSprite;
+    Color tpColor;
     private void Update()
     {
 
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isReadyToDash)
         {
+            Instantiate(tpParticles,transform.position,tpParticles.transform.rotation);
             characterController.AddForce(movement.normalized * dashForce, ForceMode2D.Impulse);
             StartCoroutine(DashDuration());
         }
@@ -47,7 +51,12 @@ public class PlayerController : MonoBehaviour
     {
         isDashig = true;
         isReadyToDash = false;
+        tpColor = playerSprite.color;
+        tpColor.a = 0f;
+        playerSprite.color = tpColor;
         yield return new WaitForSeconds(dashDuration);
+        tpColor.a = 1f;
+        playerSprite.color = tpColor;
         isDashig = false;
         characterController.velocity = Vector3.zero;
         yield return new WaitForSeconds(dashCooldown);

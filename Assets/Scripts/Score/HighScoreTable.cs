@@ -34,8 +34,6 @@ public class HighScoreTable : MonoBehaviour
             PlayerPrefs.SetString(levelName, jsonList);
             PlayerPrefs.Save();
         }
-        Debug.Log("Table");
-        Debug.Log(PlayerPrefs.GetString(levelName));
         entryTemplate.gameObject.SetActive(false);
     }
 

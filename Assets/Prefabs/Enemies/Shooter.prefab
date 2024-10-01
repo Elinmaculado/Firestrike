@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
-  scoreValue: 150
+  scoreValue: 15
   damageSounds:
   - {fileID: 8300000, guid: 465cc445f1550af478f83b459b01a31c, type: 3}
   - {fileID: 8300000, guid: b0ac3385cdb129f4c98da063edf626ab, type: 3}

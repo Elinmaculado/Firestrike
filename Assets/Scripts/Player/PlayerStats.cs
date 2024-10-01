@@ -8,17 +8,11 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] int maxHelath;
     [SerializeField] Image fillBar;
-    [SerializeField] string iframeTag;
-    [SerializeField] string playerTag;
-    [SerializeField] float invulnerabilityTime;
-    [SerializeField] SpriteRenderer playerSprite;
-    Color damagedColor;
     public PlayerDamagable life;
 
 
     private void Start() {
         life.currentHealth = maxHelath;
-        gameObject.tag = playerTag;
     }
 
     private void Update() {
@@ -29,23 +23,9 @@ public class PlayerStats : MonoBehaviour
             life.currentHealth = maxHelath;
         }
         UpdateLifeBar();
-        if (Input.GetKeyUp(KeyCode.Q)) { life.Die(); }
     }
 
     void UpdateLifeBar(){
         fillBar.fillAmount = life.currentHealth /maxHelath;
-    }
-
-    IEnumerator IFrames()
-    {
-        float alpha = playerSprite.color.a;
-        damagedColor = playerSprite.color;
-        damagedColor.a = 0.5f;
-        playerSprite.color = damagedColor; 
-        gameObject.tag = iframeTag;
-        yield return new WaitForSeconds(invulnerabilityTime);
-        gameObject.tag = playerTag;
-        damagedColor.a = alpha;
-        playerSprite.color = damagedColor;
     }
 }

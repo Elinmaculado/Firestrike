@@ -9,7 +9,7 @@ public class Damagable : MonoBehaviour
     public AudioClip[] dieSounds;
     public AudioSource audioSource;
 
-    public void Damage(float damage)
+    public virtual void Damage(float damage)
     {
         currentHealth -= damage;
         audioSource.pitch = Random.Range(1.0f, 2.0f);
@@ -22,9 +22,10 @@ public class Damagable : MonoBehaviour
             int randomIndex = Random.Range(0, damageSounds.Length);
             audioSource.PlayOneShot(damageSounds[randomIndex]);
         }
+        Debug.Log("Base");
     }
 
-    public void Die()
+    public virtual void Die()
     {
         int randomIndex = Random.Range(0, dieSounds.Length);
         audioSource.PlayOneShot(dieSounds[randomIndex]);

@@ -44,9 +44,7 @@ public class PointAndShoot : MonoBehaviour
     IEnumerator ShootDelay()
     {
         isShootReady = false;
-        Debug.Log("Shoot");
         yield return new WaitForSeconds(bulletCooldown);
-        Debug.Log("Ready to shoot");
         isShootReady = true;
     }
 }

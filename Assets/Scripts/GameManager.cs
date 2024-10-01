@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("More than one game manager");
             Destroy(this);
         }
+        Time.timeScale = 1.0f;
     }
 
     private void Update()
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        Time.timeScale = 0;
         finalScore = (long)score;
         Destroy(playerCamera);
         Destroy(playerMinimapCamera);   

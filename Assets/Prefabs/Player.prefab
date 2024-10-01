@@ -624,6 +624,8 @@ MonoBehaviour:
   dashCooldown: 1.5
   sprite: {fileID: 2824421314370184691}
   animator: {fileID: 6587960121553104585}
+  tpParticles: {fileID: 1509216239444306774, guid: 4d3b72aaaf3f8a140af9ce59557dcfed, type: 3}
+  playerSprite: {fileID: 2824421314370184691}
 --- !u!114 &526727515865052958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,10 +659,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHelath: 100
   fillBar: {fileID: 2000881458431052720}
-  iframeTag: IF_Player
-  playerTag: Player
-  invulnerabilityTime: 0.5
-  playerSprite: {fileID: 2824421314370184691}
   life: {fileID: 3733629225442548437}
 --- !u!114 &3733629225442548437
 MonoBehaviour:
@@ -682,6 +680,10 @@ MonoBehaviour:
   dieSounds:
   - {fileID: 8300000, guid: f630ecf450aab904398b7ac447ad81bf, type: 3}
   audioSource: {fileID: 7982636376450079054}
+  iframeTag: IF_Player
+  playerTag: Player
+  invulnerabilityTime: 1
+  playerSprite: {fileID: 2824421314370184691}
 --- !u!50 &4649031696797316156
 Rigidbody2D:
   serializedVersion: 4
@@ -971,7 +973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9d1130ad9d1b5f24eb710169732617d1, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1

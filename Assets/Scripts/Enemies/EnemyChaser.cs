@@ -93,10 +93,8 @@ public class EnemyChaser : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        Debug.Log("Chasing");
            if (collision.gameObject.CompareTag("House"))
         {
-            Debug.Log("chaser burns");
             collision.gameObject.GetComponent<BuildingController>().OnFire(fireDamage * Time.deltaTime);
         }
         if (isReadyToDamage)

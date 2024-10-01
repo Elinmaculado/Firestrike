@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1517757141153187271}
   - component: {fileID: 781439120443443100}
   - component: {fileID: 4545005585353802780}
-  - component: {fileID: 8746231552027039954}
   - component: {fileID: 1391758937928247389}
   - component: {fileID: 2470513014885452898}
+  - component: {fileID: 163766876330185817}
   m_Layer: 10
   m_Name: Chaser
   m_TagString: Enemy
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
-  scoreValue: 100
+  scoreValue: 10
   damageSounds:
   - {fileID: 8300000, guid: 31479b4905b42904383c87602150b910, type: 3}
   - {fileID: 8300000, guid: db54dc31fb8134c44a4a08a343278b43, type: 3}
@@ -160,41 +160,6 @@ MonoBehaviour:
   dieSounds:
   - {fileID: 8300000, guid: 2c4bb7ff70a95814eaf69bd45bc59823, type: 3}
   audioSource: {fileID: 2470513014885452898}
---- !u!70 &8746231552027039954
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291281914472240009}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.3, y: 1.5}
-  m_Direction: 0
 --- !u!95 &1391758937928247389
 Animator:
   serializedVersion: 5
@@ -312,6 +277,41 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &163766876330185817
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291281914472240009}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.2
 --- !u!1 &2406392376284925292
 GameObject:
   m_ObjectHideFlags: 0
